@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>br.com.riteris.octopus</groupId>
+        <artifactId>Octopus</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../Parent</relativePath>
+    </parent>
+
+    <artifactId>octopus-audit</artifactId>
+    <packaging>jar</packaging>
+
+    <name>octopus-audit</name>
+    <url>http://maven.apache.org</url>
+    <description>Núcleo de serviços referentes à auditoria de operações no sistema.</description>
+    <inceptionYear>2016</inceptionYear>
+    <organization>
+        <name>Riteris Tecnologia</name>
+        <url>www.riteris.com.br</url>
+    </organization>
+
+</project>

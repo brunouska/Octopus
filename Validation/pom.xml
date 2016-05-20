@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>br.com.riteris.octopus</groupId>
+        <artifactId>Octopus</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../Parent</relativePath>
+    </parent>
+
+    <artifactId>octopus-validation</artifactId>
+    <packaging>jar</packaging>
+
+    <name>octopus-validation</name>
+    <url>http://maven.apache.org</url>
+    <description>Núcleo de validadores de objetos afim de garantir qualidade, confiabilidade e correção dos dados
+        enviados ao banco de dados.
+    </description>
+    <inceptionYear>2015</inceptionYear>
+    <organization>
+        <name>Riteris Tecnologia</name>
+        <url>www.riteris.com.br</url>
+    </organization>
+
+</project>

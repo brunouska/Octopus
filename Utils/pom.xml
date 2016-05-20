@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>br.com.riteris.octopus</groupId>
+        <artifactId>Octopus</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../Parent</relativePath>
+    </parent>
+
+    <artifactId>octopus-utils</artifactId>
+    <packaging>jar</packaging>
+
+    <name>octopus-utils</name>
+    <url>http://maven.apache.org</url>
+    <description>Núcleo de objetos e serviços utilitários, como serviços de manipulação de textos, números, datas,
+        coleções e mapas entre outras utilidades.
+    </description>
+    <inceptionYear>2015</inceptionYear>
+    <organization>
+        <name>Riteris Tecnologia</name>
+        <url>www.riteris.com.br</url>
+    </organization>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>18.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-math3</artifactId>
+            <version>3.2</version>
+        </dependency>
+    </dependencies>
+
+</project>
