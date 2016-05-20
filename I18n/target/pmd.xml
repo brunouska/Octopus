@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd version="5.3.2" timestamp="2016-05-20T19:29:21.988">
+    <file name="/Users/scan/Desenvolvimento/Projetos/Octopus/I18n/src/main/java/br/com/riteris/octopus/i18n/aspects/TranslationAspect.java">
+        <violation beginline="13" endline="13" begincolumn="1" endcolumn="26" rule="UnusedImports"
+                   ruleset="Import Statements" package="br.com.riteris.octopus.i18n.aspects"
+                   externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/imports.html#UnusedImports"
+                   priority="4">
+            Avoid unused imports such as 'java.util.Iterator'
+        </violation>
+        <violation beginline="90" endline="90" begincolumn="18" endcolumn="45" rule="UselessParentheses"
+                   ruleset="Unnecessary" package="br.com.riteris.octopus.i18n.aspects" class="TranslationAspect"
+                   method="invalidRequeriments"
+                   externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/unnecessary.html#UselessParentheses"
+                   priority="4">
+            Useless parentheses.
+        </violation>
+        <violation beginline="212" endline="213" begincolumn="52" endcolumn="59" rule="UselessParentheses"
+                   ruleset="Unnecessary" package="br.com.riteris.octopus.i18n.aspects" class="TranslationAspect"
+                   method="translateObject"
+                   externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/unnecessary.html#UselessParentheses"
+                   priority="4">
+            Useless parentheses.
+        </violation>
+        <violation beginline="219" endline="220" begincolumn="50" endcolumn="48" rule="UselessParentheses"
+                   ruleset="Unnecessary" package="br.com.riteris.octopus.i18n.aspects" class="TranslationAspect"
+                   method="translateObject"
+                   externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/unnecessary.html#UselessParentheses"
+                   priority="4">
+            Useless parentheses.
+        </violation>
+    </file>
+    <file name="/Users/scan/Desenvolvimento/Projetos/Octopus/I18n/src/main/java/br/com/riteris/octopus/i18n/translators/DefaultTranslator.java">
+        <violation beginline="20" endline="20" begincolumn="29" endcolumn="42" rule="UnusedPrivateField"
+                   ruleset="Unused Code" package="br.com.riteris.octopus.i18n.translators" class="DefaultTranslator"
+                   variable="resourceBundle"
+                   externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/unusedcode.html#UnusedPrivateField"
+                   priority="3">
+            Avoid unused private fields such as 'resourceBundle'.
+        </violation>
+        <violation beginline="25" endline="25" begincolumn="20" endcolumn="36" rule="UnusedPrivateField"
+                   ruleset="Unused Code" package="br.com.riteris.octopus.i18n.translators" class="DefaultTranslator"
+                   variable="leftTextDelimiter"
+                   externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/unusedcode.html#UnusedPrivateField"
+                   priority="3">
+            Avoid unused private fields such as 'leftTextDelimiter'.
+        </violation>
+        <violation beginline="30" endline="30" begincolumn="20" endcolumn="37" rule="UnusedPrivateField"
+                   ruleset="Unused Code" package="br.com.riteris.octopus.i18n.translators" class="DefaultTranslator"
+                   variable="rightTextDelimiter"
+                   externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/unusedcode.html#UnusedPrivateField"
+                   priority="3">
+            Avoid unused private fields such as 'rightTextDelimiter'.
+        </violation>
+    </file>
+    <file name="/Users/scan/Desenvolvimento/Projetos/Octopus/I18n/src/main/java/br/com/riteris/octopus/i18n/translators/DefaultTranslatorPool.java">
+        <violation beginline="19" endline="19" begincolumn="20" endcolumn="36" rule="UnusedPrivateField"
+                   ruleset="Unused Code" package="br.com.riteris.octopus.i18n.translators" class="DefaultTranslatorPool"
+                   variable="leftTextDelimiter"
+                   externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/unusedcode.html#UnusedPrivateField"
+                   priority="3">
+            Avoid unused private fields such as 'leftTextDelimiter'.
+        </violation>
+        <violation beginline="24" endline="24" begincolumn="20" endcolumn="37" rule="UnusedPrivateField"
+                   ruleset="Unused Code" package="br.com.riteris.octopus.i18n.translators" class="DefaultTranslatorPool"
+                   variable="rightTextDelimiter"
+                   externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/unusedcode.html#UnusedPrivateField"
+                   priority="3">
+            Avoid unused private fields such as 'rightTextDelimiter'.
+        </violation>
+    </file>
+</pmd>

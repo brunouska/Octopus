@@ -1,0 +1,9 @@
+br/com/riteris/octopus/i18n/resources/IResourceBundle.class
+br/com/riteris/octopus/i18n/locales/Language.class
+br/com/riteris/octopus/i18n/resources/IResourceBundleProvider.class
+br/com/riteris/octopus/i18n/translators/DefaultTranslator.class
+br/com/riteris/octopus/i18n/translators/ITranslatorPool.class
+br/com/riteris/octopus/i18n/sources/I18NSource.class
+br/com/riteris/octopus/i18n/aspects/TranslationAspect.class
+br/com/riteris/octopus/i18n/translators/DefaultTranslatorPool.class
+br/com/riteris/octopus/i18n/translators/ITranslator.class

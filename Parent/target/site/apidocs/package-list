@@ -1,0 +1,11 @@
+br.com.riteris.octopus.data.environment
+br.com.riteris.octopus.i18n.aspects
+br.com.riteris.octopus.i18n.locales
+br.com.riteris.octopus.i18n.resources
+br.com.riteris.octopus.i18n.sources
+br.com.riteris.octopus.i18n.translators
+br.com.riteris.octopus.messaging.email
+br.com.riteris.octopus.monitoring.error.aspects
+br.com.riteris.octopus.user.domain
+br.com.riteris.octopus.user.valueobjects
+br.com.riteris.octopus.utils

@@ -1,0 +1,5 @@
+br/com/riteris/octopus/utils/DateTools.class
+br/com/riteris/octopus/utils/CollectionAndMapTools.class
+br/com/riteris/octopus/utils/ObjectTools.class
+br/com/riteris/octopus/utils/StringTools.class
+br/com/riteris/octopus/utils/NumberTools.class

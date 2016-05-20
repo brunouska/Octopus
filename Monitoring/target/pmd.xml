@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd version="5.3.2" timestamp="2016-05-20T19:30:03.614">
+    <file name="/Users/scan/Desenvolvimento/Projetos/Octopus/Monitoring/src/main/java/br/com/riteris/octopus/monitoring/error/aspects/ErrorMonitoring.java">
+        <violation beginline="171" endline="171" begincolumn="18" endcolumn="45" rule="UselessParentheses"
+                   ruleset="Unnecessary" package="br.com.riteris.octopus.monitoring.error.aspects"
+                   class="ErrorMonitoring" method="invalidRequeriments"
+                   externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/unnecessary.html#UselessParentheses"
+                   priority="4">
+            Useless parentheses.
+        </violation>
+    </file>
+</pmd>

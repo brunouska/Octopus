@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="6.2">
+    <file name="/Users/scan/Desenvolvimento/Projetos/Octopus/Messaging/src/main/java/br/com/riteris/octopus/messaging/email/AuthenticatedEmailSender.java">
+        <error line="0" severity="error" message="File does not end with a newline."
+               source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
+        <error line="0" severity="error" message="Missing package-info.java file."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocPackageCheck"/>
+        <error line="5" severity="error"
+               message="Using the &apos;.*&apos; form of import should be avoided - org.apache.commons.mail.*."
+               source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+        <error line="12" severity="error" message="Line is longer than 80 characters (found 114)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="58" severity="error" message="Line is longer than 80 characters (found 108)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="71" severity="error" message="Line is longer than 80 characters (found 102)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="71" column="37" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="71" column="51" severity="error" message="&apos;senderAddress&apos; hides a field."
+               source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+        <error line="71" column="79" severity="error" message="&apos;senderName&apos; hides a field."
+               source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+        <error line="72" column="13" severity="error" message="&apos;smtpServerAddress&apos; hides a field."
+               source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+        <error line="72" column="42" severity="error" message="&apos;smtpServerPort&apos; hides a field."
+               source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+        <error line="73" severity="error" message="Line is longer than 80 characters (found 111)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="73" column="51" severity="error" message="&apos;smtpServerLogin&apos; hides a field."
+               source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+        <error line="73" column="81" severity="error" message="&apos;smtpServerSecret&apos; hides a field."
+               source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+        <error line="74" column="46" severity="error" message="&apos;requiresSSL&apos; hides a field."
+               source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+        <error line="74" column="57" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="75" column="13" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="75" column="45" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="75" column="59" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="75" column="61" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="76" severity="error" message="Line is longer than 80 characters (found 85)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="76" column="48" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="76" column="83" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="79" column="13" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="79" column="45" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="79" column="56" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="79" column="58" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="80" severity="error" message="Line is longer than 80 characters (found 82)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="80" column="48" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="80" column="80" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="83" column="13" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="83" column="45" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="83" column="63" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="83" column="65" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="84" severity="error" message="Line is longer than 80 characters (found 94)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="84" column="48" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="84" column="92" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="87" column="13" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="87" column="55" severity="error" message="&apos;65536&apos; is a magic number."
+               source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
+        <error line="87" column="60" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="88" severity="error" message="Line is longer than 80 characters (found 120)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="88" column="48" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="88" column="120" severity="error" message="&apos;+&apos; should be on a new line."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck"/>
+        <error line="89" column="34" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="92" column="13" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="92" column="45" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="92" column="61" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="92" column="63" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="93" severity="error" message="Line is longer than 80 characters (found 92)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="93" column="48" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="93" column="90" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="96" column="13" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="96" column="45" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="96" column="62" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="96" column="64" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="97" severity="error" message="Line is longer than 80 characters (found 93)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="97" column="48" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="97" column="91" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="113" severity="error" message="Line is longer than 80 characters (found 113)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="113" column="12" severity="error" message="Redundant &apos;final&apos; modifier."
+               source="com.puppycrawl.tools.checkstyle.checks.modifier.RedundantModifierCheck"/>
+        <error line="113" column="28" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="113" column="63" severity="error" message="&apos;&lt;&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.GenericWhitespaceCheck"/>
+        <error line="113" column="78" severity="error" message="&apos;&gt;&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.GenericWhitespaceCheck"/>
+        <error line="115" severity="error" message="Line is longer than 80 characters (found 117)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="115" column="68" severity="error" message="&apos;&lt;&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.GenericWhitespaceCheck"/>
+        <error line="115" column="83" severity="error" message="&apos;&gt;&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.GenericWhitespaceCheck"/>
+        <error line="115" column="114" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="116" column="13" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="116" column="45" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="116" column="55" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="116" column="57" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="117" severity="error" message="Line is longer than 80 characters (found 81)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="117" column="48" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="117" column="79" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="120" severity="error" message="Line is longer than 80 characters (found 85)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="120" column="13" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="120" column="53" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="120" column="80" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="120" column="82" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="121" severity="error" message="Line is longer than 80 characters (found 113)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="121" column="48" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="121" column="111" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="124" severity="error" message="Line is longer than 80 characters (found 115)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="124" column="13" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="124" column="53" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="124" column="58" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="124" column="105" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="124" column="110" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="124" column="112" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="125" severity="error" message="Line is longer than 80 characters (found 117)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="125" column="48" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="125" column="117" severity="error" message="&apos;+&apos; should be on a new line."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck"/>
+        <error line="126" column="42" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="129" severity="error" message="Line is longer than 80 characters (found 111)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="129" column="13" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="129" column="53" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="129" column="56" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="129" column="103" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="129" column="106" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="129" column="108" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="130" severity="error" message="Line is longer than 80 characters (found 117)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="130" column="48" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="130" column="117" severity="error" message="&apos;+&apos; should be on a new line."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck"/>
+        <error line="131" column="42" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="134" severity="error" message="Line is longer than 80 characters (found 113)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="134" column="13" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="134" column="53" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="134" column="57" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="134" column="104" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="134" column="108" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="134" column="110" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="135" severity="error" message="Line is longer than 80 characters (found 117)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="135" column="48" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="135" column="117" severity="error" message="&apos;+&apos; should be on a new line."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck"/>
+        <error line="136" column="42" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="139" column="13" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="139" column="45" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="139" column="57" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="139" column="59" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="140" severity="error" message="Line is longer than 80 characters (found 87)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="140" column="48" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="140" column="85" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="143" severity="error" message="Line is longer than 80 characters (found 89)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="143" column="13" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="143" column="54" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="143" column="83" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="144" severity="error" message="Line is longer than 80 characters (found 116)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="144" column="58" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="144" column="63" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="144" column="112" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="145" column="18" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="145" column="20" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="146" severity="error" message="Line is longer than 80 characters (found 110)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="146" column="48" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="146" column="110" severity="error" message="&apos;+&apos; should be on a new line."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck"/>
+        <error line="147" column="44" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="150" severity="error" message="Line is longer than 80 characters (found 89)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="150" column="13" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="150" column="54" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="150" column="83" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="151" severity="error" message="Line is longer than 80 characters (found 120)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="151" column="58" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="151" column="61" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="151" column="110" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="151" column="113" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="151" column="115" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="151" column="117" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="152" severity="error" message="Line is longer than 80 characters (found 110)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="152" column="48" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="152" column="110" severity="error" message="&apos;+&apos; should be on a new line."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck"/>
+        <error line="153" column="44" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="156" severity="error" message="Line is longer than 80 characters (found 89)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="156" column="13" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="156" column="54" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="156" column="83" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="157" severity="error" message="Line is longer than 80 characters (found 116)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="157" column="58" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="157" column="62" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="157" column="111" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="157" column="115" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="158" column="10" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="159" severity="error" message="Line is longer than 80 characters (found 110)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="159" column="48" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="159" column="110" severity="error" message="&apos;+&apos; should be on a new line."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck"/>
+        <error line="160" column="44" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="165" severity="error" message="Line is longer than 80 characters (found 109)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="165" column="78" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="165" column="107" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="167" severity="error" message="Line is longer than 80 characters (found 107)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="167" column="51" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="167" column="105" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="169" column="18" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="169" column="76" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="170" severity="error" message="Line is longer than 80 characters (found 92)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="170" column="29" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="170" column="61" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="170" column="74" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="170" column="90" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="173" column="17" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="173" column="32" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="174" severity="error" message="Line is longer than 80 characters (found 87)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="174" column="22" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="174" column="84" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="175" severity="error" message="Line is longer than 80 characters (found 103)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="175" column="47" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="176" column="43" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="176" column="45" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="182" column="18" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="182" column="31" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="184" severity="error" message="Line is longer than 80 characters (found 120)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="184" column="40" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="184" column="118" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="190" severity="error" message="Line is longer than 80 characters (found 118)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="196" severity="error" message="Line is longer than 80 characters (found 102)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="199" severity="error" message="Line is longer than 80 characters (found 114)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="202" severity="error" message="Line is longer than 80 characters (found 89)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="205" severity="error" message="Line is longer than 80 characters (found 101)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="205" column="38" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="207" severity="error" message="Line is longer than 80 characters (found 93)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="207" column="73" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="210" column="13" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="210" column="28" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="212" severity="error" message="Line is longer than 80 characters (found 114)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="212" column="14" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="212" column="16" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.TypecastParenPadCheck"/>
+        <error line="212" column="31" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.TypecastParenPadCheck"/>
+        <error line="212" column="39" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="212" column="64" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="212" column="91" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="212" column="100" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="212" column="114" severity="error" message="&apos;+&apos; should be on a new line."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck"/>
+        <error line="213" column="34" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="213" column="36" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="213" column="38" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="214" column="9" severity="error" message="&apos;}&apos; should be on the same line."
+               source="com.puppycrawl.tools.checkstyle.checks.blocks.RightCurlyCheck"/>
+        <error line="216" column="17" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="216" column="32" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="218" column="13" severity="error" message="&apos;}&apos; should be on the same line."
+               source="com.puppycrawl.tools.checkstyle.checks.blocks.RightCurlyCheck"/>
+        <error line="224" column="13" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="224" column="25" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="225" column="35" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="225" column="40" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="226" column="34" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="226" column="50" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="226" column="70" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="226" column="72" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="227" column="9" severity="error" message="&apos;}&apos; should be on the same line."
+               source="com.puppycrawl.tools.checkstyle.checks.blocks.RightCurlyCheck"/>
+        <error line="229" column="35" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="229" column="41" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="230" column="31" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="230" column="51" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="233" column="27" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="233" column="50" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="234" column="33" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="234" column="77" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="235" column="26" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="235" column="47" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="236" column="24" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="236" column="29" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="237" column="23" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="237" column="59" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="238" column="26" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="238" column="36" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="240" column="13" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="240" column="27" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="241" column="26" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="241" column="38" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="242" column="9" severity="error" message="&apos;}&apos; should be on the same line."
+               source="com.puppycrawl.tools.checkstyle.checks.blocks.RightCurlyCheck"/>
+        <error line="244" column="14" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="244" column="16" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.TypecastParenPadCheck"/>
+        <error line="244" column="31" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.TypecastParenPadCheck"/>
+        <error line="244" column="39" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="244" column="53" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="244" column="65" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="251" severity="error" message="Line is longer than 80 characters (found 82)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="253" severity="error" message="Line is longer than 80 characters (found 95)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="254" severity="error" message="Line is longer than 80 characters (found 109)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="255" severity="error" message="Line is longer than 80 characters (found 117)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="257" severity="error" message="Line is longer than 80 characters (found 105)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="260" severity="error" message="Line is longer than 80 characters (found 99)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="260" column="39" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="261" column="27" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="263" column="28" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="263" column="43" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="264" column="35" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="264" column="62" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="265" column="28" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="265" column="43" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="267" column="10" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="267" column="12" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.TypecastParenPadCheck"/>
+        <error line="267" column="27" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.TypecastParenPadCheck"/>
+        <error line="267" column="35" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="267" column="45" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="267" column="56" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+    </file>
+    <file name="/Users/scan/Desenvolvimento/Projetos/Octopus/Messaging/src/main/java/br/com/riteris/octopus/messaging/email/IEmailSender.java">
+        <error line="0" severity="error" message="File does not end with a newline."
+               source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
+        <error line="18" severity="error" message="Line is longer than 80 characters (found 89)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="20" severity="error" message="Line is longer than 80 characters (found 103)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="21" severity="error" message="Line is longer than 80 characters (found 116)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="26" severity="error" message="Line is longer than 80 characters (found 110)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="26" column="15" severity="error" message="&apos;(&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+        <error line="26" column="38" severity="error" message="&apos;&lt;&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.GenericWhitespaceCheck"/>
+        <error line="26" column="53" severity="error" message="&apos;&gt;&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.GenericWhitespaceCheck"/>
+        <error line="28" column="20" severity="error" message="&apos;&lt;&apos; is followed by whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.GenericWhitespaceCheck"/>
+        <error line="28" column="35" severity="error" message="&apos;&gt;&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.GenericWhitespaceCheck"/>
+        <error line="28" column="66" severity="error" message="&apos;)&apos; is preceded with whitespace."
+               source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+    </file>
+</checkstyle>

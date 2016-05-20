@@ -1,0 +1,2 @@
+br/com/riteris/octopus/messaging/email/IEmailSender.class
+br/com/riteris/octopus/messaging/email/AuthenticatedEmailSender.class
