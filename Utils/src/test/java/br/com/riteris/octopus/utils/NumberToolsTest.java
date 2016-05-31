@@ -7,34 +7,17 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import static br.com.riteris.octopus.utils.NumberTools.*;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 
-/**
- * Testes do objeto utilitário de manipulação de números.
- *
- * @author Bruno Barauskas
- * @version 1.0.0 - Criação / Atualização em versão específica.
- * @since 1.0.0 - Criada em 10 de fev de 2016
- */
 public class NumberToolsTest {
 
-    private final Collection< BigDecimal > nullCollection = null;
+    private final Collection< Number > collectionWithOneValue = new ArrayList<>();
 
-    private final Collection< BigDecimal > emptyCollection = new ArrayList<>();
+    private final Collection< Number > collectionWithTwoValues = new ArrayList<>();
 
-    private final Collection< BigDecimal > collectionWithOneValue = new ArrayList<>();
+    private final Collection< Number > collectionWithThreeValuesWithPeak = new ArrayList<>();
 
-    private final Collection< BigDecimal > collectionWithTwoValues = new ArrayList<>();
-
-    private final Collection< BigDecimal > collectionWithThreeValuesWithPeak = new ArrayList<>();
-
-    /**
-     * Preparação dos objetos utilizados no teste.
-     *
-     * @throws java.lang.Exception Problemas que podem ocorrer na configuração do teste.
-     * @since 1.0.0 - Criada em 10 de fev de 2016
-     */
     @Before
     public void setUp() throws Exception {
         collectionWithOneValue.add( BigDecimal.TEN );
@@ -45,72 +28,187 @@ public class NumberToolsTest {
         collectionWithThreeValuesWithPeak.add( new BigDecimal( 100 ) );
     }
 
-    /**
-     * Test method for {@link br.com.riteris.octopus.utils.NumberTools#simpleAverage(java.util.Collection, int)}.
-     */
-    @Test
-    public final void testSimpleAverage() {
-        assertNull( NumberTools.simpleAverage( nullCollection, 1 ) );
-        assertNull( NumberTools.simpleAverage( emptyCollection, 1 ) );
-        assertNull( NumberTools.simpleAverage( nullCollection, -1 ) );
-        assertEquals( NumberTools.simpleAverage( collectionWithOneValue, 0 ), BigDecimal.TEN );
-        assertEquals( NumberTools.simpleAverage( collectionWithTwoValues, 0 ), BigDecimal.TEN );
-        assertEquals( NumberTools.simpleAverage( collectionWithThreeValuesWithPeak, 0 ), new BigDecimal( 40 ) );
+    @Test( expected = IllegalArgumentException.class )
+    public final void testAvgWithScaleWithNullCollection() {
+        avgWithScale( null, 1 );
     }
 
-    /**
-     * Test method for
-     * {@link br.com.riteris.octopus.utils.NumberTools#averageWithPeakExchange(java.util.Collection, int, java.math.BigDecimal)}.
-     */
-    @Test
-    public final void testAverageWithPeakExchange() {
-        assertNull( NumberTools.averageWithPeakExchange( nullCollection, 1, new BigDecimal( 10 ) ) );
-        assertNull( NumberTools.averageWithPeakExchange( emptyCollection, 1, new BigDecimal( 10 ) ) );
-        assertNull( NumberTools.averageWithPeakExchange( nullCollection, -1, new BigDecimal( 10 ) ) );
-        assertNull( NumberTools.averageWithPeakExchange( emptyCollection, 1, null ) );
-        assertEquals( NumberTools.averageWithPeakExchange( collectionWithOneValue, 0, new BigDecimal( 10 ) ),
-                BigDecimal.TEN );
-        assertEquals( NumberTools.averageWithPeakExchange( collectionWithTwoValues, 0, new BigDecimal( 10 ) ),
-                BigDecimal.TEN );
-        assertEquals( NumberTools.averageWithPeakExchange( collectionWithThreeValuesWithPeak, 0, new BigDecimal( 10 )
-        ), new BigDecimal( 40 ) );
+    @Test( expected = IllegalArgumentException.class )
+    public final void testAvgWithScaleWithEmptyCollection() {
+        avgWithScale( new ArrayList<>(), 1 );
     }
 
-    /**
-     * Test method for
-     * {@link br.com.riteris.octopus.utils.NumberTools#averageWithPeakCutOff(java.util.Collection, int, java.math.BigDecimal)}.
-     */
-    @Test
-    public final void testAverageWithPeakCutOff() {
-        assertNull( NumberTools.averageWithPeakCutOff( nullCollection, 1, new BigDecimal( 10 ) ) );
-        assertNull( NumberTools.averageWithPeakCutOff( emptyCollection, 1, new BigDecimal( 10 ) ) );
-        assertNull( NumberTools.averageWithPeakCutOff( nullCollection, -1, new BigDecimal( 10 ) ) );
-        assertNull( NumberTools.averageWithPeakCutOff( emptyCollection, 1, null ) );
-        assertEquals( NumberTools.averageWithPeakCutOff( collectionWithOneValue, 0, new BigDecimal( 10 ) ),
-                BigDecimal.TEN );
-        assertEquals( NumberTools.averageWithPeakCutOff( collectionWithTwoValues, 0, new BigDecimal( 10 ) ),
-                BigDecimal.TEN );
-        assertEquals( NumberTools.averageWithPeakCutOff( collectionWithThreeValuesWithPeak, 0, new BigDecimal( 90 ) )
-                , BigDecimal.TEN );
+    @Test( expected = IllegalArgumentException.class )
+    public final void testAvgWithScaleWithNegativeScale() {
+        Collection< Number > test = new ArrayList<>();
+        test.add( 1 );
+
+        avgWithScale( test, -1 );
     }
 
-    /**
-     * Test method for
-     * {@link br.com.riteris.octopus.utils.NumberTools#getNumberFormatted(java.lang.Object, int, java.lang.String, java.lang.String)}.
-     */
     @Test
-    public final void testGetNumberFormatted() {
-        assertNull( NumberTools.getNumberFormatted( null, 1, ",", "." ) );
-        assertNull( NumberTools.getNumberFormatted( "Not a Number", 1, null, null ) );
-        assertNull( NumberTools.getNumberFormatted( 1000, -1, null, null ) );
-        assertEquals( NumberTools.getNumberFormatted( new BigDecimal( 1000 ), 1, ",", "." ), "1.000,0" );
-        assertEquals( NumberTools.getNumberFormatted( 1000, 1, ",", "." ), "1.000,0" );
-        assertEquals( NumberTools.getNumberFormatted( 1000.0d, 1, ",", "." ), "1.000,0" );
-        assertEquals( NumberTools.getNumberFormatted( 1000.0f, 1, ",", "." ), "1.000,0" );
-        assertEquals( NumberTools.getNumberFormatted( new BigDecimal( 100 ), 1, ",", "." ), "100,0" );
-        assertEquals( NumberTools.getNumberFormatted( 100, 1, ",", "." ), "100,0" );
-        assertEquals( NumberTools.getNumberFormatted( 100.0d, 1, ",", "." ), "100,0" );
-        assertEquals( NumberTools.getNumberFormatted( 100.0f, 1, ",", "." ), "100,0" );
+    public final void testAvgWithScale() {
+        assertEquals( avgWithScale( collectionWithOneValue, 0 ), BigDecimal.TEN );
+        assertEquals( avgWithScale( collectionWithTwoValues, 0 ), BigDecimal.TEN );
+        assertEquals( avgWithScale( collectionWithThreeValuesWithPeak, 0 ), new BigDecimal( 40 ) );
+    }
+
+    @Test( expected = IllegalArgumentException.class )
+    public final void testAvgWithScaleAndPeakTreatmentWithNullCollection() {
+        avgWithScaleAndPeakTreatment( null, 1, 1, false );
+    }
+
+    @Test( expected = IllegalArgumentException.class )
+    public final void testAvgWithScaleAndPeakTreatmentWithEmptyCollection() {
+        avgWithScaleAndPeakTreatment( new ArrayList<>(), 1, 1, false );
+    }
+
+    @Test( expected = IllegalArgumentException.class )
+    public final void testAvgWithScaleAndPeakTreatmentWithNegativeScale() {
+        Collection< Number > test = new ArrayList<>();
+        test.add( 1 );
+
+        avgWithScaleAndPeakTreatment( test, -1, 1, false );
+    }
+
+    @Test( expected = IllegalArgumentException.class )
+    public final void testAvgWithScaleAndPeakTreatmentWithNegativePeakPercentual() {
+        Collection< Number > test = new ArrayList<>();
+        test.add( 1 );
+
+        avgWithScaleAndPeakTreatment( test, 1, -1, false );
+    }
+
+    @Test
+    public final void testAvgWithScaleAndPeakTreatmentWithPeakSubstitution() {
+        assertEquals( avgWithScaleAndPeakTreatment( collectionWithOneValue, 0, 10, true ).intValue(), 10 );
+        assertEquals( avgWithScaleAndPeakTreatment( collectionWithTwoValues, 0, 10, true ).intValue(), 10 );
+        assertEquals( avgWithScaleAndPeakTreatment( collectionWithThreeValuesWithPeak, 0, 10, true ).intValue(), 40 );
+    }
+
+    @Test
+    public final void testAvgWithScaleAndPeakTreatmentWithPeakRemoval() {
+        assertEquals( avgWithScaleAndPeakTreatment( collectionWithOneValue, 0, 10, false ).intValue(), 10 );
+        assertEquals( avgWithScaleAndPeakTreatment( collectionWithTwoValues, 0, 10, false ).intValue(), 10 );
+        assertEquals( avgWithScaleAndPeakTreatment( collectionWithThreeValuesWithPeak, 0, 90, false ).intValue(), 10 );
+    }
+
+    @Test( expected = IllegalArgumentException.class )
+    public final void testFormatNumberToStringWithNullNumber() {
+        formatNumberToString( null, 1, ",", ".", null, null );
+    }
+
+    @Test( expected = IllegalArgumentException.class )
+    public final void testFormatNumberToStringWithNegativeScale() {
+        formatNumberToString( 1, -1, ",", ".", null, null );
+    }
+
+    @Test
+    public final void testFormatNumberToString() {
+        assertEquals( formatNumberToString( new BigDecimal( 1000 ), 1, ",", ".", null, null ), "1.000,0" );
+        assertEquals( formatNumberToString( 1000, 1, ",", ".", null, null ), "1.000,0" );
+        assertEquals( formatNumberToString( 1000.0d, 1, ",", ".", null, null ), "1.000,0" );
+        assertEquals( formatNumberToString( 1000.0f, 1, ",", ".", null, null ), "1.000,0" );
+        assertEquals( formatNumberToString( new BigDecimal( 100 ), 1, ",", ".", null, null ), "100,0" );
+        assertEquals( formatNumberToString( 100, 1, ",", ".", null, null ), "100,0" );
+        assertEquals( formatNumberToString( 100.0d, 1, ",", ".", null, null ), "100,0" );
+        assertEquals( formatNumberToString( 100.0f, 1, ",", ".", null, null ), "100,0" );
+        assertEquals( formatNumberToString( new BigDecimal( 1000 ), 2, ",", ".", null, null ), "1.000,00" );
+        assertEquals( formatNumberToString( 1000, 2, ",", ".", null, null ), "1.000,00" );
+        assertEquals( formatNumberToString( 1000.0d, 2, ",", ".", null, null ), "1.000,00" );
+        assertEquals( formatNumberToString( 1000.0f, 2, ",", ".", null, null ), "1.000,00" );
+        assertEquals( formatNumberToString( new BigDecimal( 100 ), 2, ",", ".", null, null ), "100,00" );
+        assertEquals( formatNumberToString( 100, 2, ",", ".", null, null ), "100,00" );
+        assertEquals( formatNumberToString( 100.0d, 2, ",", ".", null, null ), "100,00" );
+        assertEquals( formatNumberToString( 100.0f, 2, ",", ".", null, null ), "100,00" );
+        assertEquals( formatNumberToString( new BigDecimal( 1000 ), 2, ".", ",", null, null ), "1,000.00" );
+        assertEquals( formatNumberToString( 1000, 2, ".", ",", null, null ), "1,000.00" );
+        assertEquals( formatNumberToString( 1000.0d, 2, ".", ",", null, null ), "1,000.00" );
+        assertEquals( formatNumberToString( 1000.0f, 2, ".", ",", null, null ), "1,000.00" );
+        assertEquals( formatNumberToString( new BigDecimal( 100 ), 2, ".", ",", null, null ), "100.00" );
+        assertEquals( formatNumberToString( 100, 2, ".", ",", null, null ), "100.00" );
+        assertEquals( formatNumberToString( 100.0d, 2, ".", ",", null, null ), "100.00" );
+        assertEquals( formatNumberToString( 100.0f, 2, ".", ",", null, null ), "100.00" );
+        assertEquals( formatNumberToString( new BigDecimal( 1000 ), 2, ".", ",", "R$ ", null ), "R$ 1,000.00" );
+        assertEquals( formatNumberToString( 1000, 2, ".", ",", "R$ ", null ), "R$ 1,000.00" );
+        assertEquals( formatNumberToString( 1000.0d, 2, ".", ",", "R$ ", null ), "R$ 1,000.00" );
+        assertEquals( formatNumberToString( 1000.0f, 2, ".", ",", "R$ ", null ), "R$ 1,000.00" );
+        assertEquals( formatNumberToString( new BigDecimal( 100 ), 2, ".", ",", "R$ ", null ), "R$ 100.00" );
+        assertEquals( formatNumberToString( 100, 2, ".", ",", "R$ ", null ), "R$ 100.00" );
+        assertEquals( formatNumberToString( 100.0d, 2, ".", ",", "R$ ", null ), "R$ 100.00" );
+        assertEquals( formatNumberToString( 100.0f, 2, ".", ",", "R$ ", null ), "R$ 100.00" );
+        assertEquals( formatNumberToString( new BigDecimal( 1000 ), 2, ".", ",", null, " pts" ), "1,000.00 pts" );
+        assertEquals( formatNumberToString( 1000, 2, ".", ",", null, " pts" ), "1,000.00 pts" );
+        assertEquals( formatNumberToString( 1000.0d, 2, ".", ",", null, " pts" ), "1,000.00 pts" );
+        assertEquals( formatNumberToString( 1000.0f, 2, ".", ",", null, " pts" ), "1,000.00 pts" );
+        assertEquals( formatNumberToString( new BigDecimal( 100 ), 2, ".", ",", null, " pts" ), "100.00 pts" );
+        assertEquals( formatNumberToString( 100, 2, ".", ",", null, " pts" ), "100.00 pts" );
+        assertEquals( formatNumberToString( 100.0d, 2, ".", ",", null, " pts" ), "100.00 pts" );
+        assertEquals( formatNumberToString( 100.0f, 2, ".", ",", null, " pts" ), "100.00 pts" );
+        assertEquals( formatNumberToString( new BigDecimal( 1000 ), 2, ".", ",", "R$ ", " pts" ), "R$ 1,000.00 pts" );
+        assertEquals( formatNumberToString( 1000, 2, ".", ",", "R$ ", " pts" ), "R$ 1,000.00 pts" );
+        assertEquals( formatNumberToString( 1000.0d, 2, ".", ",", "R$ ", " pts" ), "R$ 1,000.00 pts" );
+        assertEquals( formatNumberToString( 1000.0f, 2, ".", ",", "R$ ", " pts" ), "R$ 1,000.00 pts" );
+        assertEquals( formatNumberToString( new BigDecimal( 100 ), 2, ".", ",", "R$ ", " pts" ), "R$ 100.00 pts" );
+        assertEquals( formatNumberToString( 100, 2, ".", ",", "R$ ", " pts" ), "R$ 100.00 pts" );
+        assertEquals( formatNumberToString( 100.0d, 2, ".", ",", "R$ ", " pts" ), "R$ 100.00 pts" );
+        assertEquals( formatNumberToString( 100.0f, 2, ".", ",", "R$ ", " pts" ), "R$ 100.00 pts" );
+    }
+
+    @Test( expected = IllegalArgumentException.class )
+    public final void testExtractNumberFromFomattedStringWithNullNumber() {
+        extractNumberFromFomattedString( null, 1, ",", ".", null, null );
+    }
+
+    @Test( expected = IllegalArgumentException.class )
+    public final void testExtractNumberFromFomattedStringWithEmptyNumber() {
+        extractNumberFromFomattedString( "", 1, ",", ".", null, null );
+    }
+
+    @Test( expected = IllegalArgumentException.class )
+    public final void testExtractNumberFromFomattedStringWithBlankNumber() {
+        extractNumberFromFomattedString( " ", 1, ",", ".", null, null );
+    }
+
+    @Test( expected = RuntimeException.class )
+    public final void testExtractNumberFromFomattedStringWithNotAnNumber() {
+        extractNumberFromFomattedString( "A", 1, ",", ".", null, null );
+    }
+
+    @Test( expected = IllegalArgumentException.class )
+    public final void testExtractNumberFromFomattedStringWithNegativeScale() {
+        extractNumberFromFomattedString( "1", -1, ",", ".", null, null );
+    }
+
+    @Test
+    public final void testExtractNumberFromFomattedString() {
+        assertEquals( extractNumberFromFomattedString( "1.000,0", 1, ",", ".", null, null ).intValue(), 1000 );
+        assertEquals( extractNumberFromFomattedString( "1.000,0", 1, ",", ".", null, null ).doubleValue(), 1000.0d, 0 );
+        assertEquals( extractNumberFromFomattedString( "1,000.0", 1, ".", ",", null, null ).intValue(), 1000 );
+        assertEquals( extractNumberFromFomattedString( "1,000.0", 1, ".", ",", null, null ).doubleValue(), 1000.0d, 0 );
+        assertEquals( extractNumberFromFomattedString( "R$ 1.000,0", 1, ",", ".", "R$ ", null ).intValue(), 1000 );
+        assertEquals( extractNumberFromFomattedString( "R$ 1.000,0", 1, ",", ".", "R$ ", null ).doubleValue(), 1000.0d, 0 );
+        assertEquals( extractNumberFromFomattedString( "R$ 1,000.0", 1, ".", ",", "R$ ", null ).intValue(), 1000 );
+        assertEquals( extractNumberFromFomattedString( "R$ 1,000.0", 1, ".", ",", "R$ ", null ).doubleValue(), 1000.0d, 0 );
+        assertEquals( extractNumberFromFomattedString( "R$ 1.000,0 pts", 1, ",", ".", "R$ ", " pts" ).intValue(), 1000 );
+        assertEquals( extractNumberFromFomattedString( "R$ 1.000,0 pts", 1, ",", ".", "R$ ", " pts" ).doubleValue(), 1000.0d, 0 );
+        assertEquals( extractNumberFromFomattedString( "R$ 1,000.0 pts", 1, ".", ",", "R$ ", " pts" ).intValue(), 1000 );
+        assertEquals( extractNumberFromFomattedString( "R$ 1,000.0 pts", 1, ".", ",", "R$ ", " pts" ).doubleValue(), 1000.0d, 0 );
+        assertEquals( extractNumberFromFomattedString( "1.000,00", 2, ",", ".", null, null ).intValue(), 1000 );
+        assertEquals( extractNumberFromFomattedString( "1.000,00", 2, ",", ".", null, null ).doubleValue(), 1000.0d, 0 );
+        assertEquals( extractNumberFromFomattedString( "1,000.00", 2, ".", ",", null, null ).intValue(), 1000 );
+        assertEquals( extractNumberFromFomattedString( "1,000.00", 2, ".", ",", null, null ).doubleValue(), 1000.0d, 0 );
+        assertEquals( extractNumberFromFomattedString( "R$ 1.000,00", 2, ",", ".", "R$ ", null ).intValue(), 1000 );
+        assertEquals( extractNumberFromFomattedString( "R$ 1.000,00", 2, ",", ".", "R$ ", null ).doubleValue(), 1000.0d, 0 );
+        assertEquals( extractNumberFromFomattedString( "R$ 1,000.00", 2, ".", ",", "R$ ", null ).intValue(), 1000 );
+        assertEquals( extractNumberFromFomattedString( "R$ 1,000.00", 2, ".", ",", "R$ ", null ).doubleValue(), 1000.0d, 0 );
+        assertEquals( extractNumberFromFomattedString( "R$ 1.000,00 pts", 2, ",", ".", "R$ ", " pts" ).intValue(), 1000 );
+        assertEquals( extractNumberFromFomattedString( "R$ 1.000,00 pts", 2, ",", ".", "R$ ", " pts" ).doubleValue(), 1000.0d, 0 );
+        assertEquals( extractNumberFromFomattedString( "R$ 1,000.00 pts", 2, ".", ",", "R$ ", " pts" ).intValue(), 1000 );
+        assertEquals( extractNumberFromFomattedString( "R$ 1,000.00 pts", 2, ".", ",", "R$ ", " pts" ).doubleValue(), 1000.0d, 0 );
+        assertEquals( extractNumberFromFomattedString( "1.000,0", 1, ".", ",", null, null ).intValue(), 1 );
+        assertEquals( extractNumberFromFomattedString( "1.000,0", 1, ".", null, null, null ).intValue(), 1 );
+        assertEquals( extractNumberFromFomattedString( "1.000,0", 1, null, null, null, null ).intValue(), 1000 );
     }
 
 }
