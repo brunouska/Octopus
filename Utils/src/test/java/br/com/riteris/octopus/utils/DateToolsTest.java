@@ -4,15 +4,9 @@ import org.junit.Test;
 
 import java.time.LocalDate;
 
+import static br.com.riteris.octopus.utils.DateTools.*;
 import static org.junit.Assert.*;
 
-/**
- * Testes do objeto utilitário de manipulação de Datas.
- *
- * @author Bruno Barauskas
- * @version 1.0.0 - Criação do teste.
- * @since 1.0.0 - Criada em 10 de fev de 2016
- */
 public class DateToolsTest {
 
     private final LocalDate firstJanuary = LocalDate.of( 2016, 1, 1 );
@@ -21,154 +15,243 @@ public class DateToolsTest {
 
     private final LocalDate endJanuary = LocalDate.of( 2016, 1, 31 );
 
-    private final LocalDate dateNull = null;
-
-    /**
-     * Test method for
-     * {@link br.com.riteris.octopus.utils.DateTools#formatDate(java.time.temporal.TemporalAccessor, java.lang.String)}.
-     */
-    @Test
-    public final void testFormatDate() {
-        assertEquals( DateTools.formatDate( dateNull, "dd/MM/yyyy" ), "" );
-        assertEquals( DateTools.formatDate( firstJanuary, null ), "" );
-        assertEquals( DateTools.formatDate( firstJanuary, "invalid" ), "" );
-        assertEquals( DateTools.formatDate( firstJanuary, "dd/MM/yyyy" ), "01/01/2016" );
+    @Test( expected = IllegalArgumentException.class )
+    public final void testFormatDateToPatternWithNullDate() {
+        formatDateToPattern( null, "dd/MM/yyyy" );
     }
 
-    /**
-     * Test method for {@link br.com.riteris.octopus.utils.DateTools#getYearDaysAmount(int)}.
-     */
-    @Test
-    public final void testGetYearDaysAmount() {
-        assertEquals( DateTools.getYearDaysAmount( -2016 ), 0 );
-        assertEquals( DateTools.getYearDaysAmount( 0 ), 0 );
-        assertEquals( DateTools.getYearDaysAmount( 2016 ), 366 );
+    @Test( expected = IllegalArgumentException.class )
+    public final void testFormatDateToPatternWithNullPattern() {
+        formatDateToPattern( firstJanuary, null );
     }
 
-    /**
-     * Test method for {@link br.com.riteris.octopus.utils.DateTools#getDateAtFirstDayOfMonth(java.time.LocalDate)}.
-     */
-    @Test
-    public final void testGetDateAtFirstDayOfMonth() {
-        assertNull( DateTools.getDateAtFirstDayOfMonth( dateNull ) );
-        assertEquals( DateTools.getDateAtFirstDayOfMonth( middleJanuary ), firstJanuary );
-        assertEquals( DateTools.getDateAtFirstDayOfMonth( firstJanuary ), firstJanuary );
-        assertEquals( DateTools.getDateAtFirstDayOfMonth( endJanuary ), firstJanuary );
+    @Test( expected = IllegalArgumentException.class )
+    public final void testFormatDateToPatternWithEmptyPattern() {
+        formatDateToPattern( firstJanuary, "" );
     }
 
-    /**
-     * Test method for {@link br.com.riteris.octopus.utils.DateTools#getDateAtLastDayOfMonth(java.time.LocalDate)}.
-     */
-    @Test
-    public final void testGetDateAtLastDayOfMonth() {
-        assertNull( DateTools.getDateAtLastDayOfMonth( dateNull ) );
-        assertEquals( DateTools.getDateAtLastDayOfMonth( middleJanuary ), endJanuary );
-        assertEquals( DateTools.getDateAtLastDayOfMonth( firstJanuary ), endJanuary );
-        assertEquals( DateTools.getDateAtLastDayOfMonth( endJanuary ), endJanuary );
+    @Test( expected = IllegalArgumentException.class )
+    public final void testFormatDateToPatternWithBlankPattern() {
+        formatDateToPattern( firstJanuary, " " );
     }
 
-    /**
-     * Test method for
-     * {@link br.com.riteris.octopus.utils.DateTools#isEqualDate(java.time.LocalDate, java.time.LocalDate)}.
-     */
-    @Test
-    public final void testIsEqualDate() {
-        assertFalse( DateTools.isEqualDate( dateNull, firstJanuary ) );
-        assertFalse( DateTools.isEqualDate( firstJanuary, dateNull ) );
-        assertFalse( DateTools.isEqualDate( dateNull, dateNull ) );
-        assertFalse( DateTools.isEqualDate( firstJanuary, middleJanuary ) );
-        assertFalse( DateTools.isEqualDate( firstJanuary, endJanuary ) );
-        assertTrue( DateTools.isEqualDate( firstJanuary, firstJanuary ) );
+    @Test( expected = RuntimeException.class )
+    public final void testFormatDateToPatternWithInvalidPattern() {
+        formatDateToPattern( firstJanuary, "INVALID" );
     }
 
-    /**
-     * Test method for
-     * {@link br.com.riteris.octopus.utils.DateTools#isBeforeDate(java.time.LocalDate, java.time.LocalDate)}.
-     */
     @Test
-    public final void testIsBeforeDate() {
-        assertFalse( DateTools.isBeforeDate( dateNull, firstJanuary ) );
-        assertFalse( DateTools.isBeforeDate( firstJanuary, dateNull ) );
-        assertFalse( DateTools.isBeforeDate( dateNull, dateNull ) );
-        assertTrue( DateTools.isBeforeDate( firstJanuary, middleJanuary ) );
-        assertTrue( DateTools.isBeforeDate( firstJanuary, endJanuary ) );
-        assertFalse( DateTools.isBeforeDate( firstJanuary, firstJanuary ) );
-        assertFalse( DateTools.isBeforeDate( middleJanuary, firstJanuary ) );
+    public final void testFormatDateToPattern() {
+        assertEquals( formatDateToPattern( firstJanuary, "dd/MM/yyyy" ), "01/01/2016" );
     }
 
-    /**
-     * Test method for
-     * {@link br.com.riteris.octopus.utils.DateTools#isEqualOrBeforeDate(java.time.LocalDate, java.time.LocalDate)}.
-     */
-    @Test
-    public final void testIsEqualOrBeforeDate() {
-        assertFalse( DateTools.isEqualOrBeforeDate( dateNull, firstJanuary ) );
-        assertFalse( DateTools.isEqualOrBeforeDate( firstJanuary, dateNull ) );
-        assertFalse( DateTools.isEqualOrBeforeDate( dateNull, dateNull ) );
-        assertTrue( DateTools.isEqualOrBeforeDate( firstJanuary, middleJanuary ) );
-        assertTrue( DateTools.isEqualOrBeforeDate( firstJanuary, endJanuary ) );
-        assertTrue( DateTools.isEqualOrBeforeDate( firstJanuary, firstJanuary ) );
-        assertFalse( DateTools.isEqualOrBeforeDate( middleJanuary, firstJanuary ) );
+    @Test( expected = IllegalArgumentException.class )
+    public final void testGetTotalYearDaysWithNegativeYear() {
+        getTotalYearDays( -2016 );
     }
 
-    /**
-     * Test method for
-     * {@link br.com.riteris.octopus.utils.DateTools#isAfterDate(java.time.LocalDate, java.time.LocalDate)}.
-     */
-    @Test
-    public final void testIsAfterDate() {
-        assertFalse( DateTools.isAfterDate( dateNull, firstJanuary ) );
-        assertFalse( DateTools.isAfterDate( firstJanuary, dateNull ) );
-        assertFalse( DateTools.isAfterDate( dateNull, dateNull ) );
-        assertFalse( DateTools.isAfterDate( firstJanuary, middleJanuary ) );
-        assertFalse( DateTools.isAfterDate( firstJanuary, endJanuary ) );
-        assertFalse( DateTools.isAfterDate( middleJanuary, middleJanuary ) );
-        assertTrue( DateTools.isAfterDate( middleJanuary, firstJanuary ) );
+    @Test( expected = IllegalArgumentException.class )
+    public final void testGetTotalYearDaysWithYearBeforeYearOne() {
+        getTotalYearDays( 0 );
     }
 
-    /**
-     * Test method for
-     * {@link br.com.riteris.octopus.utils.DateTools#isEqualOrAfterDate(java.time.LocalDate, java.time.LocalDate)}.
-     */
     @Test
-    public final void testIsEqualOrAfterDate() {
-        assertFalse( DateTools.isEqualOrAfterDate( dateNull, firstJanuary ) );
-        assertFalse( DateTools.isEqualOrAfterDate( firstJanuary, dateNull ) );
-        assertFalse( DateTools.isEqualOrAfterDate( dateNull, dateNull ) );
-        assertFalse( DateTools.isEqualOrAfterDate( firstJanuary, middleJanuary ) );
-        assertFalse( DateTools.isEqualOrAfterDate( firstJanuary, endJanuary ) );
-        assertTrue( DateTools.isEqualOrAfterDate( middleJanuary, middleJanuary ) );
-        assertTrue( DateTools.isEqualOrAfterDate( middleJanuary, firstJanuary ) );
+    public final void testGetTotalYearDays() {
+        assertEquals( getTotalYearDays( 2016 ), 366 );
     }
 
-    /**
-     * Test method for
-     * {@link br.com.riteris.octopus.utils.DateTools#isDateBetweenPeriodInclusive(java.time.LocalDate, java.time.LocalDate, java.time.LocalDate)}.
-     */
+    @Test( expected = IllegalArgumentException.class )
+    public final void testDateAtFirstDayOfActualDateMonthWithNullDate() {
+        getDateAtFirstDayOfActualDateMonth( null );
+    }
+
+    @Test
+    public final void testDateAtFirstDayOfActualDateMonth() {
+        assertEquals( getDateAtFirstDayOfActualDateMonth( middleJanuary ), firstJanuary );
+        assertEquals( getDateAtFirstDayOfActualDateMonth( firstJanuary ), firstJanuary );
+        assertEquals( getDateAtFirstDayOfActualDateMonth( endJanuary ), firstJanuary );
+    }
+
+    @Test( expected = IllegalArgumentException.class )
+    public final void testDateAtLastDayOfActualDateMonthWithnullDate() {
+        getDateAtLastDayOfActualDateMonth( null );
+    }
+
+    @Test
+    public final void testDateAtLastDayOfActualDateMonth() {
+        assertEquals( getDateAtLastDayOfActualDateMonth( middleJanuary ), endJanuary );
+        assertEquals( getDateAtLastDayOfActualDateMonth( firstJanuary ), endJanuary );
+        assertEquals( getDateAtLastDayOfActualDateMonth( endJanuary ), endJanuary );
+    }
+
+    @Test( expected = IllegalArgumentException.class )
+    public final void testIsSameDateExcludingTimeInfoWithFirstDateNull() {
+        isSameDateExcludingTimeInfo( null, firstJanuary );
+    }
+
+    @Test( expected = IllegalArgumentException.class )
+    public final void testIsSameDateExcludingTimeInfoWithSecondDateNull() {
+        isSameDateExcludingTimeInfo( firstJanuary, null );
+    }
+
+    @Test( expected = IllegalArgumentException.class )
+    public final void testIsSameDateExcludingTimeInfoWithBoothDatesNull() {
+        isSameDateExcludingTimeInfo( null, null );
+    }
+
+    @Test
+    public final void testIsSameDateExcludingTimeInfo() {
+        assertFalse( isSameDateExcludingTimeInfo( firstJanuary, middleJanuary ) );
+        assertFalse( isSameDateExcludingTimeInfo( firstJanuary, endJanuary ) );
+        assertTrue( isSameDateExcludingTimeInfo( firstJanuary, firstJanuary ) );
+    }
+
+    @Test( expected = IllegalArgumentException.class )
+    public final void testDateIsBeforeExcludingTimeInfoWithNullDate() {
+        dateIsBeforeExcludingTimeInfo( null, firstJanuary );
+    }
+
+    @Test( expected = IllegalArgumentException.class )
+    public final void testDateIsBeforeExcludingTimeInfoWithNullReferenceDate() {
+        dateIsBeforeExcludingTimeInfo( firstJanuary, null );
+    }
+
+    @Test( expected = IllegalArgumentException.class )
+    public final void testDateIsBeforeExcludingTimeInfoWithBoothDatesNull() {
+        dateIsBeforeExcludingTimeInfo( null, null );
+    }
+
+    @Test
+    public final void testDateIsBeforeExcludingTimeInfo() {
+        assertTrue( dateIsBeforeExcludingTimeInfo( firstJanuary, middleJanuary ) );
+        assertTrue( dateIsBeforeExcludingTimeInfo( firstJanuary, endJanuary ) );
+        assertFalse( dateIsBeforeExcludingTimeInfo( firstJanuary, firstJanuary ) );
+        assertFalse( dateIsBeforeExcludingTimeInfo( middleJanuary, firstJanuary ) );
+    }
+
+    @Test( expected = IllegalArgumentException.class )
+    public final void testDateIsEqualOrBeforeExcludingTimeInfoWithNullDate() {
+        dateIsEqualOrBeforeExcludingTimeInfo( null, firstJanuary );
+    }
+
+    @Test( expected = IllegalArgumentException.class )
+    public final void testDateIsEqualOrBeforeExcludingTimeInfoWithNullReferenceDate() {
+        dateIsEqualOrBeforeExcludingTimeInfo( firstJanuary, null );
+    }
+
+    @Test( expected = IllegalArgumentException.class )
+    public final void testDateIsEqualOrBeforeExcludingTimeInfoWithBoothDatesNull() {
+        dateIsEqualOrBeforeExcludingTimeInfo( null, null );
+    }
+
+    @Test
+    public final void testDateIsEqualOrBeforeExcludingTimeInfo() {
+        assertTrue( dateIsEqualOrBeforeExcludingTimeInfo( firstJanuary, middleJanuary ) );
+        assertTrue( dateIsEqualOrBeforeExcludingTimeInfo( firstJanuary, endJanuary ) );
+        assertTrue( dateIsEqualOrBeforeExcludingTimeInfo( firstJanuary, firstJanuary ) );
+        assertFalse( dateIsEqualOrBeforeExcludingTimeInfo( middleJanuary, firstJanuary ) );
+    }
+
+    @Test( expected = IllegalArgumentException.class )
+    public final void testDateIsAfterExcludingTimeInfoWithNullDate() {
+        dateIsAfterExcludingTimeInfo( null, firstJanuary );
+    }
+
+    @Test( expected = IllegalArgumentException.class )
+    public final void testDateIsAfterExcludingTimeInfoWithNullReferenceDate() {
+        dateIsAfterExcludingTimeInfo( firstJanuary, null );
+    }
+
+    @Test( expected = IllegalArgumentException.class )
+    public final void testDateIsAfterExcludingTimeInfoWithBoothDatesNull() {
+        dateIsAfterExcludingTimeInfo( null, null );
+    }
+
+    @Test
+    public final void testDateIsAfterExcludingTimeInfo() {
+        assertFalse( dateIsAfterExcludingTimeInfo( firstJanuary, middleJanuary ) );
+        assertFalse( dateIsAfterExcludingTimeInfo( firstJanuary, endJanuary ) );
+        assertFalse( dateIsAfterExcludingTimeInfo( middleJanuary, middleJanuary ) );
+        assertTrue( dateIsAfterExcludingTimeInfo( middleJanuary, firstJanuary ) );
+    }
+
+    @Test( expected = IllegalArgumentException.class )
+    public final void testDateIsEqualOrAfterExcludingTimeInfoWithNullDate() {
+        dateIsEqualOrAfterExcludingTimeInfo( null, firstJanuary );
+    }
+
+    @Test( expected = IllegalArgumentException.class )
+    public final void testDateIsEqualOrAfterExcludingTimeInfoWithNullReferenceDate() {
+        dateIsEqualOrAfterExcludingTimeInfo( firstJanuary, null );
+    }
+
+    @Test( expected = IllegalArgumentException.class )
+    public final void testDateIsEqualOrAfterExcludingTimeInfoWithBoothDatesNull() {
+        dateIsEqualOrAfterExcludingTimeInfo( null, null );
+    }
+
+    @Test
+    public final void testDateIsEqualOrAfterExcludingTimeInfo() {
+        assertFalse( dateIsEqualOrAfterExcludingTimeInfo( firstJanuary, middleJanuary ) );
+        assertFalse( dateIsEqualOrAfterExcludingTimeInfo( firstJanuary, endJanuary ) );
+        assertTrue( dateIsEqualOrAfterExcludingTimeInfo( middleJanuary, middleJanuary ) );
+        assertTrue( dateIsEqualOrAfterExcludingTimeInfo( middleJanuary, firstJanuary ) );
+    }
+
+    @Test( expected = IllegalArgumentException.class )
+    public final void testIsDateBetweenPeriodInclusiveWithNullDate() {
+        isDateBetweenPeriodInclusive( null, firstJanuary, firstJanuary );
+    }
+
+    @Test( expected = IllegalArgumentException.class )
+    public final void testIsDateBetweenPeriodInclusiveWithNullStartPeriodDate() {
+        isDateBetweenPeriodInclusive( firstJanuary, null, firstJanuary );
+    }
+
+    @Test( expected = IllegalArgumentException.class )
+    public final void testIsDateBetweenPeriodInclusiveWithNullEndPeriodDate() {
+        isDateBetweenPeriodInclusive( firstJanuary, firstJanuary, null );
+    }
+
+    @Test( expected = IllegalArgumentException.class )
+    public final void testIsDateBetweenPeriodInclusiveWithAllDatesNull() {
+        isDateBetweenPeriodInclusive( null, null, null );
+    }
+
     @Test
     public final void testIsDateBetweenPeriodInclusive() {
-        assertFalse( DateTools.isDateBetweenPeriodInclusive( dateNull, firstJanuary, endJanuary ) );
-        assertFalse( DateTools.isDateBetweenPeriodInclusive( firstJanuary, dateNull, endJanuary ) );
-        assertFalse( DateTools.isDateBetweenPeriodInclusive( firstJanuary, firstJanuary, dateNull ) );
-        assertFalse( DateTools.isDateBetweenPeriodInclusive( firstJanuary, dateNull, dateNull ) );
-        assertTrue( DateTools.isDateBetweenPeriodInclusive( firstJanuary, firstJanuary, endJanuary ) );
-        assertTrue( DateTools.isDateBetweenPeriodInclusive( middleJanuary, firstJanuary, endJanuary ) );
-        assertFalse( DateTools.isDateBetweenPeriodInclusive( endJanuary, firstJanuary, middleJanuary ) );
+        assertTrue( isDateBetweenPeriodInclusive( firstJanuary, firstJanuary, endJanuary ) );
+        assertTrue( isDateBetweenPeriodInclusive( middleJanuary, firstJanuary, endJanuary ) );
+        assertTrue( isDateBetweenPeriodInclusive( endJanuary, firstJanuary, endJanuary ) );
+        assertFalse( isDateBetweenPeriodInclusive( endJanuary, firstJanuary, middleJanuary ) );
     }
 
-    /**
-     * Test method for
-     * {@link br.com.riteris.octopus.utils.DateTools#isDateBetweenPeriodExclusive(java.time.LocalDate, java.time.LocalDate, java.time.LocalDate)}.
-     */
+    @Test( expected = IllegalArgumentException.class )
+    public final void testIsDateBetweenPeriodExclusiveWithNullDate() {
+        isDateBetweenPeriodExclusive( null, firstJanuary, firstJanuary );
+    }
+
+    @Test( expected = IllegalArgumentException.class )
+    public final void testIsDateBetweenPeriodExclusiveWithNullStartPeriodDate() {
+        isDateBetweenPeriodExclusive( firstJanuary, null, firstJanuary );
+    }
+
+    @Test( expected = IllegalArgumentException.class )
+    public final void testIsDateBetweenPeriodExclusiveWithNullEndPeriodDate() {
+        isDateBetweenPeriodExclusive( firstJanuary, firstJanuary, null );
+    }
+
+    @Test( expected = IllegalArgumentException.class )
+    public final void testIsDateBetweenPeriodExclusiveWithAllDatesNull() {
+        isDateBetweenPeriodExclusive( null, null, null );
+    }
+
     @Test
     public final void testIsDateBetweenPeriodExclusive() {
-        assertFalse( DateTools.isDateBetweenPeriodExclusive( dateNull, firstJanuary, endJanuary ) );
-        assertFalse( DateTools.isDateBetweenPeriodExclusive( firstJanuary, dateNull, endJanuary ) );
-        assertFalse( DateTools.isDateBetweenPeriodExclusive( firstJanuary, firstJanuary, dateNull ) );
-        assertFalse( DateTools.isDateBetweenPeriodExclusive( firstJanuary, dateNull, dateNull ) );
-        assertFalse( DateTools.isDateBetweenPeriodExclusive( firstJanuary, firstJanuary, endJanuary ) );
-        assertTrue( DateTools.isDateBetweenPeriodExclusive( middleJanuary, firstJanuary, endJanuary ) );
-        assertFalse( DateTools.isDateBetweenPeriodExclusive( endJanuary, firstJanuary, middleJanuary ) );
+        assertFalse( isDateBetweenPeriodExclusive( firstJanuary, firstJanuary, endJanuary ) );
+        assertTrue( isDateBetweenPeriodExclusive( middleJanuary, firstJanuary, endJanuary ) );
+        assertFalse( isDateBetweenPeriodExclusive( endJanuary, firstJanuary, endJanuary ) );
+        assertFalse( isDateBetweenPeriodExclusive( endJanuary, firstJanuary, middleJanuary ) );
     }
 
 }
