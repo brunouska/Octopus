@@ -67,7 +67,7 @@ public final class ObjectTools {
                 final StringBuilder multipleValues = new StringBuilder();
                 multipleValues.append( "[ " );
 
-                if ( ( object instanceof Collection ) && ( !CollectionAndMapTools.collectionIsNullOrEmpty( ( Collection< Object > ) object ) ) ) {
+                if ( ( object instanceof Collection ) && ( !collectionIsNullOrEmpty( ( Collection< Object > ) object ) ) ) {
                     describeCollection( ( Collection< Object > ) object, multipleValues );
                 } else if ( ( object instanceof Map ) && ( !CollectionAndMapTools.mapIsNullOrEmpty( ( Map< Object, Object > ) object ) ) ) {
                     describeMap( ( Map< Object, Object > ) object, multipleValues );
@@ -116,6 +116,31 @@ public final class ObjectTools {
                 resultToAppend.append( ", " );
             }
         }
+    }
+
+    public static String describeObjectsCollection( Collection< Object > objects ) {
+        final StringBuilder result = new StringBuilder();
+
+        if ( !collectionIsNullOrEmpty( objects ) ) {
+            Iterator< Object > iterator = objects.iterator();
+
+            while ( iterator.hasNext() ) {
+                Object object = iterator.next();
+
+                result.append( "    * " );
+                result.append( ObjectTools.getObjectDescriptionResume( object ) );
+
+                if ( iterator.hasNext() ) {
+                    result.append( ", " ).append( "\r\n" );
+                } else {
+                    result.append( "." );
+                }
+            }
+        } else {
+            result.append( "    * -EMPTY-" );
+        }
+
+        return result.toString();
     }
 
 }

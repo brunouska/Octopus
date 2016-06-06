@@ -3,13 +3,9 @@ package br.com.riteris.octopus.utils;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
-import static br.com.riteris.octopus.utils.ObjectTools.areEqualsUsingProperty;
-import static br.com.riteris.octopus.utils.ObjectTools.getObjectDescriptionResume;
+import static br.com.riteris.octopus.utils.ObjectTools.*;
 import static org.junit.Assert.*;
 
 public class ObjectToolsTest {
@@ -121,6 +117,41 @@ public class ObjectToolsTest {
         assertEquals( getObjectDescriptionResume( mapaComplexoDoisNiveis ), "HashMap: [ Key: String: 2B - Value: HashMap: [ Key: String: 1AA - Value: " +
                 "ArrayList: [ String: AA, String: BB, String: CC ] ], Key: String: 2A - Value: HashMap: [ Key: String: 1A - Value: ArrayList: [ String: AA, String: BB," +
                 " String: CC ] ] ]" );
+    }
+
+    @Test
+    public final void testDescribeObjectsCollectionWithNullCollection() {
+        assertEquals( describeObjectsCollection( null ), "    * -EMPTY-" );
+    }
+
+    @Test
+    public final void testDescribeObjectsCollectionWithEmptyCollection() {
+        assertEquals( describeObjectsCollection( new ArrayList<>() ), "    * -EMPTY-" );
+    }
+
+    @Test
+    public final void testDescribeObjectsCollection() {
+        final String arg1 = "Arg-01";
+        final Integer arg2 = 1;
+        final Collection< String > arg3 = new ArrayList<>();
+        arg3.add( "Col-Arg-01" );
+        arg3.add( "Col-Arg-02" );
+        arg3.add( "Col-Arg-03" );
+        final Map< String, String > arg4 = new HashMap<>();
+        arg4.put( "Map-Arg-Key-01", "Map-Arg-Value-01" );
+        arg4.put( "Map-Arg-Key-02", "Map-Arg-Value-02" );
+        arg4.put( "Map-Arg-Key-03", "Map-Arg-Value-03" );
+
+        final Object[] objectsArray = new Object[]{ arg1, arg2, arg3, arg4 };
+
+
+        final String expectedResult = "    * String: Arg-01, \r\n" +
+                "    * Integer: 1, \r\n" +
+                "    * ArrayList: [ String: Col-Arg-01, String: Col-Arg-02, String: Col-Arg-03 ], \r\n" +
+                "    * HashMap: [ Key: String: Map-Arg-Key-03 - Value: String: Map-Arg-Value-03, Key: " +
+                "String: Map-Arg-Key-02 - Value: String: Map-Arg-Value-02, Key: String: Map-Arg-Key-01 - Value: String: Map-Arg-Value-01 ].";
+
+        assertEquals( describeObjectsCollection( Arrays.asList( objectsArray ) ), expectedResult );
     }
 
 }

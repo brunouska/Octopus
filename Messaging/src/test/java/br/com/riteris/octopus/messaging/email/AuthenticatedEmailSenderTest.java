@@ -1,6 +1,5 @@
 package br.com.riteris.octopus.messaging.email;
 
-import br.com.riteris.octopus.utils.StringTools;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,6 +17,8 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
+import static br.com.riteris.octopus.utils.StringTools.stringIsNullOrEmpty;
+import static br.com.riteris.octopus.utils.StringTools.stringIsNullOrEmptyOrBlank;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -1043,7 +1044,7 @@ public class AuthenticatedEmailSenderTest {
         @Override
         public void login( String username, String password ) throws LoginFailedException {
 
-            if ( StringTools.isNullEmptyOrBlank( username ) || StringTools.isNullOrEmpty( password ) ) {
+            if ( stringIsNullOrEmptyOrBlank( username ) || stringIsNullOrEmpty( password ) ) {
                 throw new LoginFailedException( "Usuário e Senha não informados." );
             }
 

@@ -1,6 +1,7 @@
 package br.com.riteris.octopus.utils;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
@@ -11,7 +12,7 @@ public final class DateTools {
     private DateTools() {
     }
 
-    public static String formatDateToPattern( LocalDate dateObj, String pattern ) {
+    public static String formatDateToPattern( LocalDateTime dateObj, String pattern ) {
         if ( dateObj == null ) {
             throw new IllegalArgumentException( "The date to be formatted can't be null." );
         }

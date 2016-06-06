@@ -1,12 +1,13 @@
 package br.com.riteris.octopus.messaging.email;
 
 import br.com.riteris.octopus.utils.CollectionAndMapTools;
-import br.com.riteris.octopus.utils.StringTools;
 import org.apache.commons.mail.*;
 import org.apache.commons.mail.resolver.DataSourceUrlResolver;
 
 import java.net.URL;
 import java.util.Map;
+
+import static br.com.riteris.octopus.utils.StringTools.stringIsNullOrEmptyOrBlank;
 
 /**
  * Objeto para envio de e-mails, o qual implementa a interface {@link IEmailSender} para utilização com servidores
@@ -72,15 +73,15 @@ public final class AuthenticatedEmailSender implements IEmailSender {
             smtpServerAddress, final int smtpServerPort,
                                      final String smtpServerLogin, final String smtpServerSecret, final boolean
                                              requiresSSL ) {
-        if ( StringTools.isNullEmptyOrBlank( senderAddress ) ) {
+        if ( stringIsNullOrEmptyOrBlank( senderAddress ) ) {
             throw new IllegalArgumentException( "Sender address must be informed." );
         }
 
-        if ( StringTools.isNullEmptyOrBlank( senderName ) ) {
+        if ( stringIsNullOrEmptyOrBlank( senderName ) ) {
             throw new IllegalArgumentException( "Sender name must be informed." );
         }
 
-        if ( StringTools.isNullEmptyOrBlank( smtpServerAddress ) ) {
+        if ( stringIsNullOrEmptyOrBlank( smtpServerAddress ) ) {
             throw new IllegalArgumentException( "The SMTP server address must be informed." );
         }
 
@@ -89,11 +90,11 @@ public final class AuthenticatedEmailSender implements IEmailSender {
                     "1 to 65536." );
         }
 
-        if ( StringTools.isNullEmptyOrBlank( smtpServerLogin ) ) {
+        if ( stringIsNullOrEmptyOrBlank( smtpServerLogin ) ) {
             throw new IllegalArgumentException( "The SMTP server login must be informed." );
         }
 
-        if ( StringTools.isNullEmptyOrBlank( smtpServerSecret ) ) {
+        if ( stringIsNullOrEmptyOrBlank( smtpServerSecret ) ) {
             throw new IllegalArgumentException( "The SMTP server secret must be informed." );
         }
 
@@ -113,7 +114,7 @@ public final class AuthenticatedEmailSender implements IEmailSender {
     public final void send( final String mailTitle, final Map< String, String > receiversNamesAndAddresses, final
     String mailMessage,
                             final boolean rawTextFormat, final Map< String, String > attachmentsNamesAndAddresses ) {
-        if ( StringTools.isNullEmptyOrBlank( mailTitle ) ) {
+        if ( stringIsNullOrEmptyOrBlank( mailTitle ) ) {
             throw new IllegalArgumentException( "Mail title must be informed." );
         }
 
@@ -136,7 +137,7 @@ public final class AuthenticatedEmailSender implements IEmailSender {
                     "receivers declared." );
         }
 
-        if ( StringTools.isNullEmptyOrBlank( mailMessage ) ) {
+        if ( stringIsNullOrEmptyOrBlank( mailMessage ) ) {
             throw new IllegalArgumentException( "The mail message must be informed." );
         }
 
