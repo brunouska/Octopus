@@ -3,7 +3,6 @@ package br.com.riteris.octopus.utils;
 import org.junit.Test;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 import static br.com.riteris.octopus.utils.DateTools.*;
 import static org.junit.Assert.*;
@@ -15,36 +14,6 @@ public class DateToolsTest {
     private final LocalDate middleJanuary = LocalDate.of( 2016, 1, 15 );
 
     private final LocalDate endJanuary = LocalDate.of( 2016, 1, 31 );
-
-    @Test( expected = IllegalArgumentException.class )
-    public final void testFormatDateToPatternWithNullDate() {
-        formatDateToPattern( null, "dd/MM/yyyy" );
-    }
-
-    @Test( expected = IllegalArgumentException.class )
-    public final void testFormatDateToPatternWithNullPattern() {
-        formatDateToPattern( LocalDateTime.of( 2016, 1, 1, 0, 0, 0 ), null );
-    }
-
-    @Test( expected = IllegalArgumentException.class )
-    public final void testFormatDateToPatternWithEmptyPattern() {
-        formatDateToPattern( LocalDateTime.of( 2016, 1, 1, 0, 0, 0 ), "" );
-    }
-
-    @Test( expected = IllegalArgumentException.class )
-    public final void testFormatDateToPatternWithBlankPattern() {
-        formatDateToPattern( LocalDateTime.of( 2016, 1, 1, 0, 0, 0 ), " " );
-    }
-
-    @Test( expected = RuntimeException.class )
-    public final void testFormatDateToPatternWithInvalidPattern() {
-        formatDateToPattern( LocalDateTime.of( 2016, 1, 1, 0, 0, 0 ), "INVALID" );
-    }
-
-    @Test
-    public final void testFormatDateToPattern() {
-        assertEquals( formatDateToPattern( LocalDateTime.of( 2016, 1, 1, 0, 0, 0 ), "dd/MM/yyyy" ), "01/01/2016" );
-    }
 
     @Test( expected = IllegalArgumentException.class )
     public final void testGetTotalYearDaysWithNegativeYear() {

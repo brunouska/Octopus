@@ -1,33 +1,11 @@
 package br.com.riteris.octopus.utils;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
-
-import static br.com.riteris.octopus.utils.StringTools.stringIsNullOrEmptyOrBlank;
 
 public final class DateTools {
 
     private DateTools() {
-    }
-
-    public static String formatDateToPattern( LocalDateTime dateObj, String pattern ) {
-        if ( dateObj == null ) {
-            throw new IllegalArgumentException( "The date to be formatted can't be null." );
-        }
-
-        if ( stringIsNullOrEmptyOrBlank( pattern ) ) {
-            throw new IllegalArgumentException( "The pattern to format data can't be null, empty or blank." );
-        }
-
-        try {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern( pattern );
-
-            return formatter.format( dateObj );
-        } catch ( Exception e ) {
-            throw new RuntimeException( "Error trying to format data into pattern: " + e.getMessage() );
-        }
     }
 
     public static int getTotalYearDays( int year ) {
