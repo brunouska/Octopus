@@ -10,12 +10,12 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import static br.com.riteris.octopus.utils.DateTools.formatDateToPattern;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.*;
@@ -72,7 +72,7 @@ public class ErrorMonitorTest {
         verify( this.fakeErrorHandler, times( 1 ) ).handleError( errorInfoArgumentCaptor.capture() );
 
         final String expectedMsg = ">>>>>>>>>>>>>>>>>> EXECUTION ERROR DETAILS <<<<<<<<<<<<<<<<<<\r\n" +
-                "Error Date: " + formatDateToPattern( LocalDateTime.now(), "dd/MM/yyyy - HH:mm" ) + "\r\n" +
+                "Error Date: " + DateTimeFormatter.ofPattern( "dd/MM/yy HH:mm" ).format( LocalDateTime.now() ) + "\r\n" +
                 "-------------------------------------------------------------" + "\r\n" +
                 "Object Name: java.lang.Object\r\n" +
                 "-------------------------------------------------------------\r\n" +

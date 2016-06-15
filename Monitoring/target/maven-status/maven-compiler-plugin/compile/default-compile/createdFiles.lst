@@ -1,1 +1,4 @@
-br/com/riteris/octopus/monitoring/error/aspects/ErrorMonitoring.class
+br/com/riteris/octopus/monitoring/error/aspects/ErrorInfo.class
+br/com/riteris/octopus/monitoring/error/aspects/IErrorHandler.class
+br/com/riteris/octopus/monitoring/error/aspects/ErrorMonitor.class
+br/com/riteris/octopus/monitoring/error/aspects/EmailErrorHandler.class

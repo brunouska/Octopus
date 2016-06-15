@@ -1,6 +1,7 @@
-br/com/riteris/octopus/monitoring/error/aspects/ErrorMonitoringTest$JoinPointSampleWithoutArguments.class
-br/com/riteris/octopus/monitoring/error/aspects/ErrorMonitoringTest$JoinPointCompleteSample.class
-br/com/riteris/octopus/monitoring/error/aspects/ErrorMonitoringTest$JoinPointSampleWithMixedArguments.class
-br/com/riteris/octopus/monitoring/error/aspects/ErrorMonitoringTest.class
-br/com/riteris/octopus/monitoring/error/aspects/ErrorMonitoringTest$JoinPointSampleWithEmptyArguments.class
-br/com/riteris/octopus/monitoring/error/aspects/ErrorMonitoringTest$JoinPointSampleWithNullArguments.class
+br/com/riteris/octopus/monitoring/error/aspects/EmailErrorHandlerTest.class
+br/com/riteris/octopus/monitoring/error/aspects/ErrorInfoTest.class
+br/com/riteris/octopus/monitoring/error/aspects/ErrorMonitorTest$JoinPointCompleteSample.class
+br/com/riteris/octopus/monitoring/error/aspects/EmailErrorHandlerTest$JoinPointCompleteSample.class
+br/com/riteris/octopus/monitoring/error/aspects/ErrorInfoTest$2.class
+br/com/riteris/octopus/monitoring/error/aspects/ErrorMonitorTest.class
+br/com/riteris/octopus/monitoring/error/aspects/ErrorInfoTest$1.class

@@ -1,6 +1,6 @@
 package br.com.riteris.octopus.data.environment;
 
-import br.com.riteris.octopus.utils.StringTools;
+import static br.com.riteris.octopus.utils.StringTools.stringIsNullOrEmptyOrBlank;
 
 /**
  * Enum contendo os valores possíveis para os ambientes de dados dos repositórios.
@@ -63,7 +63,7 @@ public enum DataEnvironment {
      * @since 1.0.0 - Criada em 6 de mar de 2016
      */
     public final DataEnvironment getEnvironmentByAccessRole( final String accessRole ) {
-        if ( StringTools.isNullEmptyOrBlank( accessRole ) ) {
+        if ( stringIsNullOrEmptyOrBlank( accessRole ) ) {
             return null;
         }
 

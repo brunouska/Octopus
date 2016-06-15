@@ -1,9 +1,4 @@
-/Users/scan/Desenvolvimento/Projetos/Octopus/I18n/src/main/java/br/com/riteris/octopus/i18n/locales/Language.java
 /Users/scan/Desenvolvimento/Projetos/Octopus/I18n/src/main/java/br/com/riteris/octopus/i18n/sources/I18NSource.java
-/Users/scan/Desenvolvimento/Projetos/Octopus/I18n/src/main/java/br/com/riteris/octopus/i18n/resources/IResourceBundle.java
-/Users/scan/Desenvolvimento/Projetos/Octopus/I18n/src/main/java/br/com/riteris/octopus/i18n/translators/DefaultTranslator.java
 /Users/scan/Desenvolvimento/Projetos/Octopus/I18n/src/main/java/br/com/riteris/octopus/i18n/aspects/TranslationAspect.java
-/Users/scan/Desenvolvimento/Projetos/Octopus/I18n/src/main/java/br/com/riteris/octopus/i18n/translators/ITranslatorPool.java
-/Users/scan/Desenvolvimento/Projetos/Octopus/I18n/src/main/java/br/com/riteris/octopus/i18n/translators/DefaultTranslatorPool.java
-/Users/scan/Desenvolvimento/Projetos/Octopus/I18n/src/main/java/br/com/riteris/octopus/i18n/translators/ITranslator.java
-/Users/scan/Desenvolvimento/Projetos/Octopus/I18n/src/main/java/br/com/riteris/octopus/i18n/resources/IResourceBundleProvider.java
+/Users/scan/Desenvolvimento/Projetos/Octopus/I18n/src/main/java/br/com/riteris/octopus/i18n/locales/LocaleProvider.java
+/Users/scan/Desenvolvimento/Projetos/Octopus/I18n/src/main/java/br/com/riteris/octopus/i18n/translators/Translator.java

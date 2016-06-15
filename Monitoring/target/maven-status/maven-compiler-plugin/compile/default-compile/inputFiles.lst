@@ -1,1 +1,4 @@
-/Users/scan/Desenvolvimento/Projetos/Octopus/Monitoring/src/main/java/br/com/riteris/octopus/monitoring/error/aspects/ErrorMonitoring.java
+/Users/scan/Desenvolvimento/Projetos/Octopus/Monitoring/src/main/java/br/com/riteris/octopus/monitoring/error/aspects/ErrorInfo.java
+/Users/scan/Desenvolvimento/Projetos/Octopus/Monitoring/src/main/java/br/com/riteris/octopus/monitoring/error/aspects/EmailErrorHandler.java
+/Users/scan/Desenvolvimento/Projetos/Octopus/Monitoring/src/main/java/br/com/riteris/octopus/monitoring/error/aspects/IErrorHandler.java
+/Users/scan/Desenvolvimento/Projetos/Octopus/Monitoring/src/main/java/br/com/riteris/octopus/monitoring/error/aspects/ErrorMonitor.java

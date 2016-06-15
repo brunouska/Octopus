@@ -3,9 +3,9 @@ package br.com.riteris.octopus.monitoring.error.aspects;
 import org.aspectj.lang.Signature;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 
-import static br.com.riteris.octopus.utils.DateTools.formatDateToPattern;
 import static br.com.riteris.octopus.utils.ObjectTools.describeObjectsCollection;
 
 public class ErrorInfo {
@@ -51,7 +51,7 @@ public class ErrorInfo {
     @Override
     public String toString() {
         final String result = ">>>>>>>>>>>>>>>>>> EXECUTION ERROR DETAILS <<<<<<<<<<<<<<<<<<" + "\r\n" +
-                "Error Date: " + formatDateToPattern( this.errorDate, "dd/MM/yyyy - HH:mm" ) + "\r\n" +
+                "Error Date: " + DateTimeFormatter.ofPattern( "dd/MM/yy HH:mm" ).format( this.errorDate ) + "\r\n" +
                 "-------------------------------------------------------------" + "\r\n" +
                 "Object Name: " + this.objectName + "\r\n" +
                 "-------------------------------------------------------------" + "\r\n" +

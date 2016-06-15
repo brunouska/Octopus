@@ -80,6 +80,8 @@ public class Translator {
         }
 
         final NumberFormat numberFormat = NumberFormat.getPercentInstance( this.locale );
+        numberFormat.setMinimumFractionDigits( 2 );
+        numberFormat.setMaximumFractionDigits( 2 );
 
         return numberFormat.format( percentValueToFormat.doubleValue() );
     }

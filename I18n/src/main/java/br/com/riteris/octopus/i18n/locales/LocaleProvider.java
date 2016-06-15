@@ -150,19 +150,19 @@ public enum LocaleProvider {
                     return localeProvider.locale;
                 }
             }
+
+            throw new IllegalArgumentException( "Unknown language code informed." );
         } else {
             if ( code.split( "_" ).length > 3 ) {
                 throw new IllegalArgumentException( "The language code is malformed." );
             }
 
-            final LocaleProvider localeProvider = LocaleProvider.valueOf( code.toUpperCase() );
-
-            if ( localeProvider != null ) {
-                return localeProvider.locale;
+            try {
+                return LocaleProvider.valueOf( code.toUpperCase() ).locale;
+            } catch ( IllegalArgumentException ex ) {
+                throw new IllegalArgumentException( "Unknown language code informed." );
             }
         }
-
-        return null;
     }
 
     public String getLanguageName() {

@@ -7,12 +7,12 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import static br.com.riteris.octopus.utils.DateTools.formatDateToPattern;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
@@ -107,7 +107,7 @@ public class ErrorInfoTest {
         final ErrorInfo errorInfo = new ErrorInfo( new Object(), this.fakeSignature, null, new RuntimeException( "Test Exception" ) );
 
         final String expectedMsg = ">>>>>>>>>>>>>>>>>> EXECUTION ERROR DETAILS <<<<<<<<<<<<<<<<<<\r\n" +
-                "Error Date: " + formatDateToPattern( LocalDateTime.now(), "dd/MM/yyyy - HH:mm" ) + "\r\n" +
+                "Error Date: " + DateTimeFormatter.ofPattern( "dd/MM/yy HH:mm" ).format( LocalDateTime.now() ) + "\r\n" +
                 "-------------------------------------------------------------" + "\r\n" +
                 "Object Name: java.lang.Object\r\n" +
                 "-------------------------------------------------------------\r\n" +
@@ -142,7 +142,7 @@ public class ErrorInfoTest {
         final ErrorInfo errorInfo = new ErrorInfo( new Object(), this.fakeSignature, objectsArray, new RuntimeException( "Test Exception" ) );
 
         final String expectedMsg = ">>>>>>>>>>>>>>>>>> EXECUTION ERROR DETAILS <<<<<<<<<<<<<<<<<<\r\n" +
-                "Error Date: " + formatDateToPattern( LocalDateTime.now(), "dd/MM/yyyy - HH:mm" ) + "\r\n" +
+                "Error Date: " + DateTimeFormatter.ofPattern( "dd/MM/yy HH:mm" ).format( LocalDateTime.now() ) + "\r\n" +
                 "-------------------------------------------------------------" + "\r\n" +
                 "Object Name: java.lang.Object\r\n" +
                 "-------------------------------------------------------------\r\n" +
