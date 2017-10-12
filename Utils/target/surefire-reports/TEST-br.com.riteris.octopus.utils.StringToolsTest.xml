@@ -12,7 +12,7 @@
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
     <property name="file.encoding.pkg" value="sun.io"/>
-    <property name="idea.launcher.port" value="7539"/>
+    <property name="idea.launcher.port" value="7533"/>
     <property name="user.country" value="BR"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="unknown"/>
@@ -64,30 +64,30 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="br.com.riteris.octopus.utils.StringToolsTest" name="testReplacePartsInStringUsingMapAndDelimitersWithEmptyLeftDelimiter" time="0.001"/>
-  <testcase classname="br.com.riteris.octopus.utils.StringToolsTest" name="testTrimStringAtRight" time="0.001"/>
+  <testcase classname="br.com.riteris.octopus.utils.StringToolsTest" name="testReplacePartsInStringUsingMapAndDelimitersWithEmptyLeftDelimiter" time="0"/>
+  <testcase classname="br.com.riteris.octopus.utils.StringToolsTest" name="testTrimStringAtRight" time="0"/>
   <testcase classname="br.com.riteris.octopus.utils.StringToolsTest" name="testReplacePartsInStringUsingMapAndDelimitersWithNullMap" time="0"/>
-  <testcase classname="br.com.riteris.octopus.utils.StringToolsTest" name="testAddBlankSpacesToStringWithAllConditionsWrong" time="0"/>
+  <testcase classname="br.com.riteris.octopus.utils.StringToolsTest" name="testAddBlankSpacesToStringWithAllConditionsWrong" time="0.001"/>
   <testcase classname="br.com.riteris.octopus.utils.StringToolsTest" name="testReplacePartsInStringUsingMapAndDelimitersWithNullLeftDelimiter" time="0"/>
-  <testcase classname="br.com.riteris.octopus.utils.StringToolsTest" name="testStringIsNullOrEmptyOrBlank" time="0"/>
+  <testcase classname="br.com.riteris.octopus.utils.StringToolsTest" name="testStringIsNullOrEmptyOrBlank" time="0.001"/>
   <testcase classname="br.com.riteris.octopus.utils.StringToolsTest" name="testReplacePartsInStringUsingMapAndDelimiters" time="0.002"/>
   <testcase classname="br.com.riteris.octopus.utils.StringToolsTest" name="testAddBlankSpacesToStringWithNegativeSpacesNumber" time="0"/>
   <testcase classname="br.com.riteris.octopus.utils.StringToolsTest" name="testReplacePartsInStringUsingMapAndDelimitersWithNullSource" time="0"/>
   <testcase classname="br.com.riteris.octopus.utils.StringToolsTest" name="testReplacePartsInStringUsingMapAndDelimitersWithEmptyMap" time="0"/>
   <testcase classname="br.com.riteris.octopus.utils.StringToolsTest" name="testAddBlankSpacesToStringWithNoSideSelected" time="0"/>
-  <testcase classname="br.com.riteris.octopus.utils.StringToolsTest" name="testStringIsBlank" time="0"/>
+  <testcase classname="br.com.riteris.octopus.utils.StringToolsTest" name="testStringIsBlank" time="0.001"/>
   <testcase classname="br.com.riteris.octopus.utils.StringToolsTest" name="testStringIsNullOrEmpty" time="0"/>
   <testcase classname="br.com.riteris.octopus.utils.StringToolsTest" name="testFillStringAtRightWithBlankSpacesToDesiredLengthWithNegativeLength" time="0"/>
   <testcase classname="br.com.riteris.octopus.utils.StringToolsTest" name="testAddBlankSpacesToString" time="0"/>
-  <testcase classname="br.com.riteris.octopus.utils.StringToolsTest" name="testAddBlankSpacesToStringWithZeroAtSpacesNumber" time="0.001"/>
+  <testcase classname="br.com.riteris.octopus.utils.StringToolsTest" name="testAddBlankSpacesToStringWithZeroAtSpacesNumber" time="0"/>
   <testcase classname="br.com.riteris.octopus.utils.StringToolsTest" name="testReplacePartsInStringUsingMapAndDelimitersWithBlankRightDelimiter" time="0"/>
   <testcase classname="br.com.riteris.octopus.utils.StringToolsTest" name="testTrimStringAtLeft" time="0"/>
-  <testcase classname="br.com.riteris.octopus.utils.StringToolsTest" name="testFillStringAtLeftWithBlankSpacesToDesiredLengthWithNegativeLength" time="0.001"/>
+  <testcase classname="br.com.riteris.octopus.utils.StringToolsTest" name="testFillStringAtLeftWithBlankSpacesToDesiredLengthWithNegativeLength" time="0"/>
   <testcase classname="br.com.riteris.octopus.utils.StringToolsTest" name="testReplacePartsInStringUsingMapAndDelimitersWithEmptyRightDelimiter" time="0"/>
   <testcase classname="br.com.riteris.octopus.utils.StringToolsTest" name="testReplacePartsInStringUsingMapAndDelimitersWithBlankLeftDelimiter" time="0"/>
-  <testcase classname="br.com.riteris.octopus.utils.StringToolsTest" name="testFillStringAtLeftWithBlankSpacesToDesiredLengthWithZeroLength" time="0.001"/>
+  <testcase classname="br.com.riteris.octopus.utils.StringToolsTest" name="testFillStringAtLeftWithBlankSpacesToDesiredLengthWithZeroLength" time="0"/>
   <testcase classname="br.com.riteris.octopus.utils.StringToolsTest" name="testFillStringAtRightWithBlankSpacesToDesiredLength" time="0"/>
   <testcase classname="br.com.riteris.octopus.utils.StringToolsTest" name="testFillStringAtRightWithBlankSpacesToDesiredLengthWithZeroLength" time="0"/>
-  <testcase classname="br.com.riteris.octopus.utils.StringToolsTest" name="testFillStringAtLeftWithBlankSpacesToDesiredLength" time="0.001"/>
+  <testcase classname="br.com.riteris.octopus.utils.StringToolsTest" name="testFillStringAtLeftWithBlankSpacesToDesiredLength" time="0"/>
   <testcase classname="br.com.riteris.octopus.utils.StringToolsTest" name="testReplacePartsInStringUsingMapAndDelimitersWithNullRightDelimiter" time="0"/>
 </testsuite>

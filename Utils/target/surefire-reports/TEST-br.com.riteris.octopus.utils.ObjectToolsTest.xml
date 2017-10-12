@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="10" failures="0" name="br.com.riteris.octopus.utils.ObjectToolsTest" time="0.007" errors="0" skipped="0">
+<testsuite tests="10" failures="0" name="br.com.riteris.octopus.utils.ObjectToolsTest" time="0.01" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2016.1.3"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -12,7 +12,7 @@
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
     <property name="file.encoding.pkg" value="sun.io"/>
-    <property name="idea.launcher.port" value="7539"/>
+    <property name="idea.launcher.port" value="7533"/>
     <property name="user.country" value="BR"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="unknown"/>
@@ -65,13 +65,13 @@
     <property name="sun.cpu.isalist" value=""/>
   </properties>
   <testcase classname="br.com.riteris.octopus.utils.ObjectToolsTest" name="testDescribeObjectsCollectionWithNullCollection" time="0.001"/>
-  <testcase classname="br.com.riteris.octopus.utils.ObjectToolsTest" name="testDescribeObjectsCollectionWithEmptyCollection" time="0"/>
-  <testcase classname="br.com.riteris.octopus.utils.ObjectToolsTest" name="testGetObjectDescriptionResume" time="0.002"/>
+  <testcase classname="br.com.riteris.octopus.utils.ObjectToolsTest" name="testDescribeObjectsCollectionWithEmptyCollection" time="0.001"/>
+  <testcase classname="br.com.riteris.octopus.utils.ObjectToolsTest" name="testGetObjectDescriptionResume" time="0.003"/>
   <testcase classname="br.com.riteris.octopus.utils.ObjectToolsTest" name="testAreEqualsUsingPropertyWithEmptyPropertiesMap" time="0"/>
-  <testcase classname="br.com.riteris.octopus.utils.ObjectToolsTest" name="testAreEqualsUsingPropertyWithNullPropertiesMap" time="0.001"/>
-  <testcase classname="br.com.riteris.octopus.utils.ObjectToolsTest" name="testAreEqualsUsingProperty" time="0"/>
+  <testcase classname="br.com.riteris.octopus.utils.ObjectToolsTest" name="testAreEqualsUsingPropertyWithNullPropertiesMap" time="0"/>
+  <testcase classname="br.com.riteris.octopus.utils.ObjectToolsTest" name="testAreEqualsUsingProperty" time="0.001"/>
   <testcase classname="br.com.riteris.octopus.utils.ObjectToolsTest" name="testAreEqualsUsingPropertyWithNullObjectA" time="0"/>
   <testcase classname="br.com.riteris.octopus.utils.ObjectToolsTest" name="testAreEqualsUsingPropertyWithNullObjectB" time="0"/>
-  <testcase classname="br.com.riteris.octopus.utils.ObjectToolsTest" name="testAreEqualsUsingPropertyWithNullObjects" time="0"/>
+  <testcase classname="br.com.riteris.octopus.utils.ObjectToolsTest" name="testAreEqualsUsingPropertyWithNullObjects" time="0.001"/>
   <testcase classname="br.com.riteris.octopus.utils.ObjectToolsTest" name="testDescribeObjectsCollection" time="0.001"/>
 </testsuite>

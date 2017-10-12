@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="10" failures="0" name="br.com.riteris.octopus.utils.NumberToolsTest" time="0.014" errors="0" skipped="0">
+<testsuite tests="10" failures="0" name="br.com.riteris.octopus.utils.NumberToolsTest" time="0.016" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2016.1.3"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -12,7 +12,7 @@
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
     <property name="file.encoding.pkg" value="sun.io"/>
-    <property name="idea.launcher.port" value="7539"/>
+    <property name="idea.launcher.port" value="7533"/>
     <property name="user.country" value="BR"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="unknown"/>
@@ -64,13 +64,13 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="br.com.riteris.octopus.utils.NumberToolsTest" name="testAvgWithScaleWithEmptyCollection" time="0.001"/>
+  <testcase classname="br.com.riteris.octopus.utils.NumberToolsTest" name="testAvgWithScaleWithEmptyCollection" time="0.003"/>
   <testcase classname="br.com.riteris.octopus.utils.NumberToolsTest" name="testAvgWithScaleAndPeakTreatmentWithNullCollection" time="0"/>
   <testcase classname="br.com.riteris.octopus.utils.NumberToolsTest" name="testAvgWithScaleAndPeakTreatmentWithPeakRemoval" time="0.005"/>
-  <testcase classname="br.com.riteris.octopus.utils.NumberToolsTest" name="testAvgWithScaleAndPeakTreatmentWithNegativeScale" time="0.001"/>
+  <testcase classname="br.com.riteris.octopus.utils.NumberToolsTest" name="testAvgWithScaleAndPeakTreatmentWithNegativeScale" time="0"/>
   <testcase classname="br.com.riteris.octopus.utils.NumberToolsTest" name="testAvgWithScale" time="0"/>
   <testcase classname="br.com.riteris.octopus.utils.NumberToolsTest" name="testAvgWithScaleAndPeakTreatmentWithNegativePeakPercentual" time="0"/>
-  <testcase classname="br.com.riteris.octopus.utils.NumberToolsTest" name="testAvgWithScaleWithNullCollection" time="0.001"/>
+  <testcase classname="br.com.riteris.octopus.utils.NumberToolsTest" name="testAvgWithScaleWithNullCollection" time="0"/>
   <testcase classname="br.com.riteris.octopus.utils.NumberToolsTest" name="testAvgWithScaleAndPeakTreatmentWithEmptyCollection" time="0"/>
   <testcase classname="br.com.riteris.octopus.utils.NumberToolsTest" name="testAvgWithScaleAndPeakTreatmentWithPeakSubstitution" time="0.001"/>
   <testcase classname="br.com.riteris.octopus.utils.NumberToolsTest" name="testAvgWithScaleWithNegativeScale" time="0"/>
